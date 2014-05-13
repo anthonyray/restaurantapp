@@ -7,7 +7,8 @@ restaurant.Collections = restaurant.Collections || {};
 
     restaurant.Collections.TablesCollection = Backbone.Collection.extend({
 
-        model: restaurant.Models.TablesModel
+        model: restaurant.Models.TableModel, 
+        localStorage : new Backbone.localStorage('restaurant-tables')
 
     });
 

@@ -13,9 +13,10 @@ restaurant.Views = restaurant.Views || {};
         	this.$el.html(this.template());
         	return this;
         },
-        
+
         initialize : function(){
         	this.render();
+        	this.$("#datepicker").datepicker({autoclose : true});
         }
 
     });

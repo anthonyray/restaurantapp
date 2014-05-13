@@ -13,6 +13,8 @@ restaurant.Models = restaurant.Models || {};
         },
 
         defaults: {
+            bookingDate : Date.now(),
+            tableNumber : 0
         },
 
         validate: function(attrs, options) {

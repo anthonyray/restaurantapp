@@ -16,6 +16,8 @@ body {
 	height : 50px;
 	background-color: #E75854;
 	position : absolute;
+	top : 10%;
+	left: 10%;
 }
 
 .table:hover {

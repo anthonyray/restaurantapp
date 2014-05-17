@@ -23,6 +23,10 @@ body {
 	vertical-align: center;
 }
 
+.success{
+	color : #E75854;
+}
+
 .table-1 {
 	top : 20%;
 	left : 20%;

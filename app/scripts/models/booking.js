@@ -13,7 +13,7 @@ restaurant.Models = restaurant.Models || {};
         },
 
         defaults: {
-            bookingDate : Date.now(),
+            bookingDate : null,
             tableNumber : 0
         },
 

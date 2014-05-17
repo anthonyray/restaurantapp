@@ -9,23 +9,33 @@ restaurant.Views = restaurant.Views || {};
 
         template: JST['app/scripts/templates/booking.hbs'], 
         
-        events : {
-            'click #table' : "toggleTable"
-        },
         
         render : function(){
-        	this.$el.html(this.template(this.model.toJSON()));
+            this.destroyViews();
+
+            
+            this.$el.html(this.template());
+            this.subviews = [
+                new restaurant.Views.BookingDatetitleView({el : "#booking-datetitle", model : this.model}),
+                new restaurant.Views.BookingDatepickerView({el : "#booking-datepicker", model : this.model}),
+                new restaurant.Views.BookingConfirmView({el : "#booking-confirm", model : this.model}),
+                ];
         	return this;
         },
 
         initialize : function(){
         	var self = this;
         	
+            this.subviews = []; // Placeholder for sub-views
+
             this.render();
             
-            this.$("#datepicker").datepicker({autoclose : true}).on('changeDate', function(e){
-                self.model.set( {bookingDate : e.date} );
-            });
+            
+        },
+
+        destroyViews : function(){
+            _.invoke(this.views, 'destroy');
+            this.subviews.length = 0;
         }, 
 
         toggleTable : function(e){

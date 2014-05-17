@@ -1,14 +1,10 @@
-{{#if tableNumber}}
-	<h1 class="success">3.Confirm</h1>
-{{else}}
-	<h1>3.Confirm</h1>
-{{/if}}
+<h1 class="{{#bookingComplete tableNumber bookingDate}}{{/bookingComplete}}">3.Confirm</h1>
 <p>Summary of your reservation</p>
-
 	<ul>
 		{{#if bookingDate}}
-			<li>{{bookingDate}}</li>
+			<li>Your table will be booked on the : <b class="success">{{#humanReadableDate bookingDate}}{{/humanReadableDate}}</b></li>
 		{{/if}}
-			<li>{{tableNumber}}</li>
+			<li>{{#tableNumber tableNumber}}{{/tableNumber}}</li>
 	</ul>
+{{#bookingButton tableNumber bookingDate}}{{/bookingButton}}
 

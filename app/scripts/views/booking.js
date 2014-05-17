@@ -11,14 +11,15 @@ restaurant.Views = restaurant.Views || {};
         
         
         render : function(){
-            this.destroyViews();
+            this.destroyViews(); // Deleting the subviews to avoid memory leaks
 
             
             this.$el.html(this.template());
-            this.subviews = [
+            this.subviews = [ // Hardcoding all the subviews. Every subview has the BookingModel as a property
                 new restaurant.Views.BookingDatetitleView({el : "#booking-datetitle", model : this.model}),
                 new restaurant.Views.BookingDatepickerView({el : "#booking-datepicker", model : this.model}),
                 new restaurant.Views.BookingConfirmView({el : "#booking-confirm", model : this.model}),
+                new restaurant.Views.BookingMapView({el : "#booking-map", model : this.model})
                 ];
         	return this;
         },
@@ -34,13 +35,8 @@ restaurant.Views = restaurant.Views || {};
         },
 
         destroyViews : function(){
-            _.invoke(this.views, 'destroy');
-            this.subviews.length = 0;
-        }, 
-
-        toggleTable : function(e){
-            var table = $(e.currentTarget);
-            table.toggleClass("reserved");
+            _.invoke(this.views, 'destroy'); // Destroys subviews
+            this.subviews.length = 0; // Quick way to empty a table. 
         }
 
     });

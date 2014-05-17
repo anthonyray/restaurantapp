@@ -9,22 +9,28 @@ restaurant.Views = restaurant.Views || {};
 
         template: JST['app/scripts/templates/booking.hbs'], 
         
+        events : {
+            'click #table' : "toggleTable"
+        },
+        
         render : function(){
-        	this.$el.html(this.template());
+        	this.$el.html(this.template(this.model.toJSON()));
         	return this;
         },
 
         initialize : function(){
         	var self = this;
-        	this.render();
-        	this.$("#datepicker").datepicker({autoclose : true}).on('changeDate', function(e){
-        		self.model.set({bookingDate : e.date});
-        	});
-        	this.listenTo(this.model,'change',this.dosmthg)
+        	
+            this.render();
+            
+            this.$("#datepicker").datepicker({autoclose : true}).on('changeDate', function(e){
+                self.model.set( {bookingDate : e.date} );
+            });
         }, 
 
-        dosmthg : function(){
-        	alert('Changed a booking information');
+        toggleTable : function(e){
+            var table = $(e.currentTarget);
+            table.toggleClass("reserved");
         }
 
     });

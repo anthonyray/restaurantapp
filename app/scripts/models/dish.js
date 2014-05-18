@@ -7,19 +7,16 @@ restaurant.Models = restaurant.Models || {};
 
     restaurant.Models.DishModel = Backbone.Model.extend({
 
-        url: '',
-
         initialize: function() {
         },
 
         defaults: {
-        },
-
-        validate: function(attrs, options) {
-        },
-
-        parse: function(response, options)  {
-            return response;
+            id : "",
+            title : "",
+            description : "",
+            price : "", 
+            currency : "$",
+            category:"starters"
         }
     });
 

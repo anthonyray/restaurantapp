@@ -10,12 +10,52 @@ restaurant.Views = restaurant.Views || {};
         template: JST['app/scripts/templates/menu.hbs'], 
 
         initialize : function(){
-        	this.render();
+            // Filter collection into categories
+            this.startersCollection = this.collection.filter(function(dish) {
+                return dish.get("category") == "starters";
+            });
+
+            this.mainDishCollection = this.collection.filter(function(dish) {
+                return dish.get("category") == "maindish";
+            });
+
+            this.desertCollection = this.collection.filter(function(dish) {
+                return dish.get("category") == "desert";
+            });
+
+            // Starters subviews :
+
+            this.render();
         }, 
 
         render : function(){
-        	this.$el.html(this.template());
-        	return this;
+        	var self = this;
+            
+            this.$el.html(this.template());
+        	
+            this.startersSection = this.$("#starters");
+            this.mainDishSection = this.$("#maindish");
+            this.desertSection = this.$("#desert");
+            // Render starters
+            this.startersCollection.forEach(function(model){
+                self.addOne(model,self.startersSection);
+            });
+            // Render main dishes
+            this.mainDishCollection.forEach(function(model){
+                self.addOne(model,self.mainDishSection);
+            });
+            // Render deserts
+            this.desertCollection.forEach(function(model){
+                self.addOne(model,self.desertSection);
+            });
+
+            return this;
+        }, 
+        
+        addOne: function (dish,section) {
+                var view = new restaurant.Views.MenuDishthumbView({ model: dish });
+                section.append( view.render().el );
+                console.log(view.render().el )
         }
 
     });

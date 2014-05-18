@@ -5,17 +5,17 @@ restaurant.Views = restaurant.Views || {};
 (function () {
     'use strict';
 
-    restaurant.Views.DishView = Backbone.View.extend({
+    restaurant.Views.MenuDishthumbView = Backbone.View.extend({
 
-        template: JST['app/scripts/templates/dish.hbs'], 
-
-        initialize : function(){
-        	this.render();
-        }, 
+        template: JST['app/scripts/templates/menu-dishthumb.hbs'],
 
         render : function(){
         	this.$el.html(this.template(this.model.toJSON()));
         	return this;
+        },
+
+        initialize : function(){
+        	this.render();
         }
 
     });

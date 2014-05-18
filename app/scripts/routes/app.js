@@ -11,7 +11,9 @@ restaurant.Routers = restaurant.Routers || {};
     		this.el = el ; 
     		this.bookingView = new restaurant.Views.BookingView({model : new restaurant.Models.BookingModel()} );
     		this.landingView = new restaurant.Views.LandingView();
-            this.menuView = new restaurant.Views.MenuView();
+            this.dishesCollection = new restaurant.Collections.DishesCollection();
+            this.menuView = new restaurant.Views.MenuView({ collection : this.dishesCollection });
+
     	}, 
 
     	currentView : null,
@@ -34,6 +36,7 @@ restaurant.Routers = restaurant.Routers || {};
     	routes : {
     		"booking" : "showBookingView",
             "menu" : "showMenuView",
+            "dish/:id" : "showDishView",
     		'': 'landing'
     	},
 
@@ -47,6 +50,15 @@ restaurant.Routers = restaurant.Routers || {};
 
         showMenuView : function(){
             this.switchView(this.menuView);
+        },
+
+        showDishView : function(id){
+            
+            var model = this.dishesCollection.find(function(model){
+                return model.get("id") == id;
+            });
+            var view = new restaurant.Views.DishView({model : model});
+            this.switchView(view);
         }
 
     });

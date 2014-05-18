@@ -12,7 +12,7 @@ body {
 }
 
 .table {
-
+	transition : all 0.5s ;
 	width : 50px;
 	height : 50px;
 	background-color: #E75854;
@@ -21,6 +21,10 @@ body {
 	left: 10%;
 	text-align: center;
 	vertical-align: center;
+}
+
+.table:hover{
+	background-color: #67C2D4;
 }
 
 .success{
@@ -45,7 +49,7 @@ body {
 }
 
 .reserved {
-	background-color: green;
+	background-color: #67C2D4;
 }
 
 #datepicker

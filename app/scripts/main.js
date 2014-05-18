@@ -10,7 +10,9 @@ window.restaurant = {
         'use strict';
         console.log('Hello from Backbone!');
         
-        this.bookingView = new this.Views.BookingView({el : '#yolo', model : new this.Models.BookingModel()} );
+        var router = new this.Routers.AppRouter($('#appview'));
+        Backbone.history.start();
+        //this.bookingView = new this.Views.BookingView({el : '#appview', model : new this.Models.BookingModel()} );
 
     }
 };

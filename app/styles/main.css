@@ -1,7 +1,49 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+
+html {
+	height: 100%;
+}
+
 body {
     background: #67C2D4;
     color : #FAF1E0;
+    font-family: "Montserrat";
+    height: 100%;
 }
+
+#appview
+{
+	height: 100%;
+}
+
+/*
+* Navbar
+*/
+
+.navbar{
+	min-height: 80px;
+	background-color: #FAF1E0;
+	letter-spacing: 0.5em;
+	text-transform: uppercase;
+	margin-bottom: 0px;
+}
+
+.navbar-nav {
+	margin-top: 15px;
+}
+
+/*
+* Landing Page
+*/
+
+.cover-container{
+	min-height: 100%;
+	background-color: green;
+}
+
+/*
+* Booking page
+*/ 
 
 .map{
 	width : 100%;
@@ -27,10 +69,6 @@ body {
 	background-color: #67C2D4;
 }
 
-.success{
-	color : #E75854;
-}
-
 .table-1 {
 	top : 20%;
 	left : 20%;
@@ -48,13 +86,27 @@ body {
 	left : 80%;
 }
 
-.reserved {
-	background-color: #67C2D4;
-}
 
 #datepicker
 {
 	background-color : #FAF1E0;
 	color : #E75854;
 
+}
+
+/*
+* Misc
+*/
+
+
+.reserved {
+	background-color: #67C2D4;
+}
+
+.success{
+	color : #E75854;
+}
+
+.img-centered{
+	margin : 0 auto;
 }

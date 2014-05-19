@@ -55,7 +55,6 @@ restaurant.Views = restaurant.Views || {};
         addOne: function (dish,section) {
                 var view = new restaurant.Views.MenuDishthumbView({ model: dish });
                 section.append( view.render().el );
-                console.log(view.render().el )
         }
 
     });

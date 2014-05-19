@@ -13,7 +13,7 @@ restaurant.Routers = restaurant.Routers || {};
     		this.landingView = new restaurant.Views.LandingView();
             this.dishesCollection = new restaurant.Collections.DishesCollection();
             this.menuView = new restaurant.Views.MenuView({ collection : this.dishesCollection });
-
+            console.log(this.el);   
     	}, 
 
     	currentView : null,

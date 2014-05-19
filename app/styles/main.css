@@ -39,6 +39,10 @@ body {
 .cover-container{
 	min-height: 100%;
 	background-color: green;
+	background-image : url('/images/bg.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 0%;
 }
 
 /*

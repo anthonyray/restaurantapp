@@ -8,7 +8,7 @@ restaurant.Views = restaurant.Views || {};
     restaurant.Views.LandingView = Backbone.View.extend({
 
         template: JST['app/scripts/templates/landing.hbs'], 
-
+        className : "cover-container",
         initialize : function(){
         	this.render();
         }, 

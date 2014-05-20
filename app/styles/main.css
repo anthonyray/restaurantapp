@@ -37,14 +37,23 @@ body {
 */
 
 .cover-container{
-	min-height: 100%;
-	background-color: green;
-	background-image : url('/images/bg.jpg');
+	min-height: 70%;
+	height: 80%;
+	background-image : url('/images/bg10.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: 50% 0%;
 }
 
+#logo
+{
+	width : 500px;
+	height: 500px;
+	margin : 0 auto;
+	color : white;
+	display: block;
+
+}
 /*
 * Booking page
 */ 
@@ -96,6 +105,60 @@ body {
 	background-color : #FAF1E0;
 	color : #E75854;
 
+}
+
+/*
+* Menu 
+*/
+
+hr.menuseparator {
+    width: 30%;
+    margin-top : 50px;
+    margin-bottom: 70px;
+    padding: 0;
+    border: none;
+    border-top: medium double #FAF1E0;
+    color: #FAF1E0 ;
+    text-align: center;
+}
+hr.menuseparator:after {
+    content: "§";
+    display: inline-block;
+    position: relative; 
+    top: -0.7em;  
+    font-size: 1.5em;
+    padding: 0 0.25em;
+    background: #67C2D4 ;
+}
+
+/*
+* Footer
+*/
+
+.footer{
+	background-color: #FAF1E0;
+	color : #333333;
+	font-size: 0.9em;
+	padding : 50px;
+}
+
+hr.footerseparator {
+    margin-top : 50px;
+    margin-bottom: 35px;
+    padding: 0;
+    border: none;
+    border-top: medium double #333;
+    color: #333;
+    text-align: center;
+}
+hr.footerseparator:after {
+    content: "§";
+    display: inline-block;
+    position: relative; 
+    top: -0.7em;  
+    font-size: 1.5em;
+    padding: 0 0.25em;
+    background: #FAF1E0;
 }
 
 /*

@@ -8,7 +8,7 @@ restaurant.Views = restaurant.Views || {};
     restaurant.Views.MenuView = Backbone.View.extend({
 
         template: JST['app/scripts/templates/menu.hbs'], 
-
+        className : "container",
         initialize : function(){
             // Filter collection into categories
             this.startersCollection = this.collection.filter(function(dish) {

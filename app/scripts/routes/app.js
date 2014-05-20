@@ -13,6 +13,7 @@ restaurant.Routers = restaurant.Routers || {};
     		this.landingView = new restaurant.Views.LandingView();
             this.dishesCollection = new restaurant.Collections.DishesCollection();
             this.menuView = new restaurant.Views.MenuView({ collection : this.dishesCollection });
+            this.informationView = new restaurant.Views.InformationView();
             console.log(this.el);   
     	}, 
 
@@ -37,6 +38,7 @@ restaurant.Routers = restaurant.Routers || {};
     		"booking" : "showBookingView",
             "menu" : "showMenuView",
             "dish/:id" : "showDishView",
+            "informations" : "showInformationView",
     		'': 'landing'
     	},
 
@@ -59,6 +61,9 @@ restaurant.Routers = restaurant.Routers || {};
             });
             var view = new restaurant.Views.DishView({model : model});
             this.switchView(view);
+        }, 
+        showInformationView : function(){
+            this.switchView(this.informationView);
         }
 
     });

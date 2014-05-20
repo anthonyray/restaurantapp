@@ -8,7 +8,7 @@ restaurant.Views = restaurant.Views || {};
     restaurant.Views.BookingView = Backbone.View.extend({
 
         template: JST['app/scripts/templates/booking.hbs'], 
-        
+        className : "container",
         
         render : function(){
             this.destroyViews(); // Deleting the subviews to avoid memory leaks

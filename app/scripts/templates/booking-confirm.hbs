@@ -1,15 +1,15 @@
 <h1 class="{{#bookingComplete tableNumber bookingDate}}{{/bookingComplete}}">3.Confirm</h1>
 <div class="panel panel-default">
   <div class="panel-body">
-    
+    <p>Summary of your reservation</p>
+    	<ul>
+    		{{#if bookingDate}}
+    			<li>Your table will be booked on the : <b class="success">{{#humanReadableDate bookingDate}}{{/humanReadableDate}}</b></li>
+    		{{/if}}
+    			<li>{{#tableNumber tableNumber}}{{/tableNumber}}</li>
+    	</ul>
+    {{#bookingButton tableNumber bookingDate}}{{/bookingButton}}
+
   </div>
 </div>
-<p>Summary of your reservation</p>
-	<ul>
-		{{#if bookingDate}}
-			<li>Your table will be booked on the : <b class="success">{{#humanReadableDate bookingDate}}{{/humanReadableDate}}</b></li>
-		{{/if}}
-			<li>{{#tableNumber tableNumber}}{{/tableNumber}}</li>
-	</ul>
-{{#bookingButton tableNumber bookingDate}}{{/bookingButton}}
 

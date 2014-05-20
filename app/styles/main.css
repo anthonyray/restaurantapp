@@ -57,7 +57,16 @@ body {
 /*
 * Booking page
 */ 
+.panel
+{
+	color : #333;
+	background-color : #FAF1E0 ;
+}
 
+.btn-primary
+{
+	background: #67C2D4;
+}
 .map{
 	width : 100%;
 	min-height : 300px;
@@ -84,21 +93,48 @@ body {
 
 .table-1 {
 	top : 20%;
-	left : 20%;
+	left : 10%;
 }
 .table-2 {
-	top : 30%;
-	left : 50%;
+	top : 20%;
+	left : 30%;
 }
 .table-3 {
-	top : 10%;
-	left : 60%;
+	top : 20%;
+	left : 50%;
 }
 .table-4 {
-	top : 50%;
-	left : 80%;
+	top : 20%;
+	left : 70%;
 }
-
+.table-5 {
+	top : 50%;
+	left : 10%;
+}
+.table-6 {
+	top : 50%;
+	left : 30%;
+}
+.table-7 {
+	top : 50%;
+	left : 50%;
+}
+.table-8 {
+	top : 50%;
+	left : 70%;
+}
+.table-9 {
+	top : 80%;
+	left : 20%;
+}
+.table-10 {
+	top : 80%;
+	left : 40%;
+}
+.table-11 {
+	top : 80%;
+	left : 60%;
+}
 
 #datepicker
 {

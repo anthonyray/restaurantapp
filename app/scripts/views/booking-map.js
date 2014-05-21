@@ -28,9 +28,9 @@ restaurant.Views = restaurant.Views || {};
         		}
         	})
         	return this;
-        }, 
+        },
 
-        toggleTable : function(e){
+        toggleTable : function(e){ // Saves the number of the clicked table
             var table = $(e.currentTarget);
             this.model.set( {tableNumber : table.text()} );
         }

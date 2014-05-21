@@ -12,8 +12,8 @@ restaurant.Views = restaurant.Views || {};
         initialize : function(){
         	var self = this;
             this.render();
-        	
-            this.$("#datepicker").datepicker({autoclose : true}).on('changeDate', function(e){
+
+            this.$("#datepicker").datepicker({autoclose : true}).on('changeDate', function(e){ // Initializes the calendar
                 self.model.set( {bookingDate : e.date} );
             });
         },
@@ -21,7 +21,7 @@ restaurant.Views = restaurant.Views || {};
         render : function(){
         	this.$el.html(this.template(this.model.toJSON()));
         	return this;
-        } 
+        }
 
     });
 

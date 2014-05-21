@@ -11,14 +11,14 @@ restaurant.Views = restaurant.Views || {};
         className : "page container",
         initialize : function(){
         	this.render();
-        }, 
+        },
 
         render : function(){
         	this.$el.html(this.template());
         	return this;
-        }, 
+        },
 
-        transitionIn: function (callback) {
+        transitionIn: function (callback) { // Refer to the documentation of the LandingView
 
             var view = this;
 
@@ -35,7 +35,7 @@ restaurant.Views = restaurant.Views || {};
 
           },
 
-          transitionOut: function (callback) {
+          transitionOut: function (callback) { // Refer to the documentation of the LandingView
 
             var view = this;
 

@@ -68,19 +68,17 @@ body {
 	display: block;
 
 }
+
 /*
 * Booking page
-*/ 
+*/
+
 .panel
 {
 	color : #333;
 	background-color : #FAF1E0 ;
 }
 
-.btn-primary
-{
-	background: #67C2D4;
-}
 .map{
 	width : 100%;
 	min-height : 300px;
@@ -158,7 +156,7 @@ body {
 }
 
 /*
-* Menu 
+* Menu
 */
 
 hr.menuseparator {
@@ -174,8 +172,8 @@ hr.menuseparator {
 hr.menuseparator:after {
     content: "§";
     display: inline-block;
-    position: relative; 
-    top: -0.7em;  
+    position: relative;
+    top: -0.7em;
     font-size: 1.5em;
     padding: 0 0.25em;
     background: #67C2D4 ;
@@ -204,8 +202,8 @@ hr.footerseparator {
 hr.footerseparator:after {
     content: "§";
     display: inline-block;
-    position: relative; 
-    top: -0.7em;  
+    position: relative;
+    top: -0.7em;
     font-size: 1.5em;
     padding: 0 0.25em;
     background: #FAF1E0;
@@ -215,6 +213,10 @@ hr.footerseparator:after {
 * Misc
 */
 
+.btn-primary
+{
+	background: #67C2D4;
+}
 
 .reserved {
 	background-color: #67C2D4;

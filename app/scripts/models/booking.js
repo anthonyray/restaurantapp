@@ -13,8 +13,8 @@ restaurant.Models = restaurant.Models || {};
         },
 
         defaults: {
-            bookingDate : null,
-            tableNumber : 0
+            bookingDate : null, // Property to save the client's reservation date.
+            tableNumber : 0 // Property to save the client's reserved table number.
         },
 
         validate: function(attrs, options) {

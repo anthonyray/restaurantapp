@@ -1,20 +1,20 @@
 /*global restaurant, Backbone, JST*/
 
-restaurant.Views = restaurant.Views || {}; 
+restaurant.Views = restaurant.Views || {};
 
 (function () {
     'use strict';
 
     restaurant.Views.BookingView = Backbone.View.extend({
 
-        template: JST['app/scripts/templates/booking.hbs'], 
-        
+        template: JST['app/scripts/templates/booking.hbs'],
+
         className : "page container",
-        
+
         render : function(){
             this.destroyViews(); // Deleting the subviews to avoid memory leaks
             var self = this;
-            
+
             this.$el.html(this.template());
 
             _.delay(function(){
@@ -24,22 +24,22 @@ restaurant.Views = restaurant.Views || {};
                     new restaurant.Views.BookingConfirmView({el : "#booking-confirm", model : self.model}),
                     new restaurant.Views.BookingMapView({el : "#booking-map", model : self.model})
                     ];
-            	return self;},50);
+            	return self;},50); // Wait 50 ms to make sure the html is rendered into the .el property.
         },
 
         initialize : function(){
         	var self = this;
-        	
-            this.subviews = []; // Placeholder for sub-views        
-            
+
+            this.subviews = []; // Placeholder for sub-views
+
         },
 
-        destroyViews : function(){
+        destroyViews : function(){ // Custom function to destroy subviews.
             _.invoke(this.views, 'destroy'); // Destroys subviews
-            this.subviews.length = 0; // Quick way to empty a table. 
-        }, 
+            this.subviews.length = 0; // Quick way to empty a table.
+        },
 
-        transitionIn: function (callback) {
+        transitionIn: function (callback) { // Refer to the documentation of the LandingView
 
             var view = this;
 
@@ -56,7 +56,7 @@ restaurant.Views = restaurant.Views || {};
 
           },
 
-          transitionOut: function (callback) {
+          transitionOut: function (callback) { // Refer to the documentation of the LandingView
 
             var view = this;
 

@@ -7,8 +7,9 @@ restaurant.Views = restaurant.Views || {};
 
     restaurant.Views.MenuView = Backbone.View.extend({
 
-        template: JST['app/scripts/templates/menu.hbs'], 
+        template: JST['app/scripts/templates/menu.hbs'],
         className : "page container",
+
         initialize : function(){
             // Filter collection into categories
             this.startersCollection = this.collection.filter(function(dish) {
@@ -23,24 +24,19 @@ restaurant.Views = restaurant.Views || {};
                 return dish.get("category") == "desert";
             });
 
-            // Starters subviews :
+            this.render(); // Render view and subviews
+        },
 
-            this.render();
-        }, 
-
-        render : function(options){
+        render : function(){
         	var self = this;
-            options = options || {};
 
-            if (options.page === true){
-                this.$el.addClass('page');
-            }
-            
             this.$el.html(this.template());
-        	
+
+            // References to subviews placeholders.
             this.startersSection = this.$("#starters");
             this.mainDishSection = this.$("#maindish");
             this.desertSection = this.$("#desert");
+
             // Render starters
             this.startersCollection.forEach(function(model){
                 self.addOne(model,self.startersSection);
@@ -55,14 +51,14 @@ restaurant.Views = restaurant.Views || {};
             });
 
             return this;
-        }, 
-        
-        addOne: function (dish,section) {
+        },
+
+        addOne: function (dish,section) { // Renders a dish view and adds it to the particular section
                 var view = new restaurant.Views.MenuDishthumbView({ model: dish });
                 section.append( view.render().el );
-        }, 
-        
-        transitionIn: function (callback) {
+        },
+
+        transitionIn: function (callback) { // Refer to the documentation of the LandingView
 
             var view = this;
 
@@ -79,7 +75,7 @@ restaurant.Views = restaurant.Views || {};
 
           },
 
-          transitionOut: function (callback) {
+          transitionOut: function (callback) { // Refer to the documentation of the LandingView
 
             var view = this;
 

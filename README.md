@@ -1,10 +1,10 @@
-# H1 Restaurant App - A single page website built with Backbone.JS
+# Restaurant App - A single page website built with Backbone.JS
 
-# H2 Description
+## Description
 
-# H2  Quick Example
+## Quick Example
 
-# H2 Quick start
+## Quick start
 
-# H2 Further documentation
+## Further documentation
 

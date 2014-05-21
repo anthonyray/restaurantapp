@@ -8,7 +8,7 @@ restaurant.Views = restaurant.Views || {};
     restaurant.Views.MenuView = Backbone.View.extend({
 
         template: JST['app/scripts/templates/menu.hbs'], 
-        className : "container",
+        className : "page container",
         initialize : function(){
             // Filter collection into categories
             this.startersCollection = this.collection.filter(function(dish) {
@@ -28,8 +28,13 @@ restaurant.Views = restaurant.Views || {};
             this.render();
         }, 
 
-        render : function(){
+        render : function(options){
         	var self = this;
+            options = options || {};
+
+            if (options.page === true){
+                this.$el.addClass('page');
+            }
             
             this.$el.html(this.template());
         	
@@ -55,7 +60,37 @@ restaurant.Views = restaurant.Views || {};
         addOne: function (dish,section) {
                 var view = new restaurant.Views.MenuDishthumbView({ model: dish });
                 section.append( view.render().el );
-        }
+        }, 
+        
+        transitionIn: function (callback) {
+
+            var view = this;
+
+            var animateIn = function () {
+              view.$el.addClass('is-visible');
+              view.$el.one('transitionend', function () {
+                if (_.isFunction(callback)) {
+                  callback();
+                }
+              });
+            };
+
+            _.delay(animateIn, 20);
+
+          },
+
+          transitionOut: function (callback) {
+
+            var view = this;
+
+            view.$el.removeClass('is-visible');
+            view.$el.one('transitionend', function () {
+              if (_.isFunction(callback)) {
+                callback();
+              }
+            });
+
+          }
 
     });
 

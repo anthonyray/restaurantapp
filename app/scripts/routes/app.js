@@ -8,31 +8,53 @@ restaurant.Routers = restaurant.Routers || {};
     restaurant.Routers.AppRouter = Backbone.Router.extend({
     	
     	initialize: function(el) {
-    		this.el = el ; 
-    		this.bookingView = new restaurant.Views.BookingView({model : new restaurant.Models.BookingModel()} );
+    		this.el = el ; // Is a jquery object
+    		this.bookingView = new restaurant.Views.BookingView( {model : new restaurant.Models.BookingModel()} );
     		this.landingView = new restaurant.Views.LandingView();
             this.dishesCollection = new restaurant.Collections.DishesCollection();
             this.menuView = new restaurant.Views.MenuView({ collection : this.dishesCollection });
             this.informationView = new restaurant.Views.InformationView();
-            console.log(this.el);   
     	}, 
 
     	currentView : null,
 
-    	switchView : function(view){
-    		
-    		if (this.currentView){
-    			this.currentView.remove();
+    	/*switchView : function(view){
+    		var previous = this.currentView || null
+    		var next = view;
+            
+            if (previous){
+    			previous.transitionOut(function(){
+                    previous.remove();
+                });
     		}
 
-    		// Move the view element into the DOM (replacing the old content)
-    		this.el.html(view.el);
+    		//next.render({page:true});
 
+            // Move the view element into the DOM (replacing the old content)
+    		this.el.append(next.el);
+            //next.transitionIn();
     		// Render view after it is in the DOM (styles are applied)
-    		view.render();
 
-    		this.currentView = view;
-    	}, 
+    		this.currentView = next;
+    	}, */
+
+        switchView : function(view){
+
+            var previous = this.currentView || null; 
+            var next = view ; 
+
+            if (previous){
+                previous.transitionOut(function(){
+                    previous.remove();
+                })
+            }
+
+            next.render();
+            this.el.append(next.el);
+            next.transitionIn();
+
+            this.currentView = next;
+        },
 
     	routes : {
     		"booking" : "showBookingView",

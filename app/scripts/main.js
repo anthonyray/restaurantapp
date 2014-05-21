@@ -8,10 +8,8 @@ window.restaurant = {
     Routers: {},
     init: function () {
         'use strict';
-        console.log('Hello from Backbone!');
         this.router = new this.Routers.AppRouter($('#appview'));
         Backbone.history.start();
-
     }
 };
 

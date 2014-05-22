@@ -7,7 +7,7 @@ I was asked to do this project with one constraint : "Make a website hosted on a
 I wanted to bring dynamism to the website by making a single page website, with page transitions. I built the website respecting the initial constraint but writing code so that adding a regular server with a database could be done only adding two to three lines of code on the client side.
 
 ## Quick start
-You can find a hosted version of the project [here](http://www.google.com).
+You can find a hosted version of the project [here](http://anthonyray.github.io/latabledeparis/).
 
 If you want to make a local copy just run `git clone https://github.com/anthonyray/restaurantapp.git`
 

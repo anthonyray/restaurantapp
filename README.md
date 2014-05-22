@@ -52,3 +52,4 @@ Backbone.JS brought a MV\* structuration to the application. Here is the list of
    + `dishes.js` : **DishesCollection**. Collection of dishes (This is where I hardcoded the data, which is supposed to be retrieve from the backend server)
 + **Router**
   + `app.js` : **AppRouter**. Router that initializes views, and handles the transition between them.
++ **Templates**  : Every views has its own handlebars templates. I also added some templates helpers.

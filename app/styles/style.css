@@ -51,8 +51,8 @@ body {
 */
 
 .cover-container{
-	min-height: 70%;
-	height: 80%;
+	min-height: 500px;
+	height: 500px;
 	background-image : url('/images/bg10.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;

@@ -9,7 +9,7 @@ restaurant.Views = restaurant.Views || {};
 
         template: JST['app/scripts/templates/landing.hbs'],
 
-        className : "page cover-container",
+        className : "page",
 
         initialize : function(){
         	this.render();
